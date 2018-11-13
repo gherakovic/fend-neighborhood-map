@@ -12,6 +12,8 @@ To install the app simply clone or download this repository and navigate to the 
 2. Run npm start to start the development server
 3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
+Note that the default service worker is used in this app (bootstrapped with create-react-app) and so only works in production build.
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
