@@ -10,7 +10,7 @@ To install the app simply clone or download this repository and navigate to the 
 
 1. Run npm install to install all project dependencies
 2. Run npm start to start the development server
-3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
 ## Create React App
 

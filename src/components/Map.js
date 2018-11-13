@@ -159,7 +159,6 @@ class Map extends Component {
        role="application"
        aria-label="map"
        onReady={this.mapReady}
-       google={this.props.google}
        zoom={this.props.zoom}
        initialCenter={center}
        onClick={this.closeInfoWindow}>
