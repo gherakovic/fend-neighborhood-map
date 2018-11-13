@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Drawer from '@material-ui/core/Drawer';
 
 class Sidebar extends Component {
   state = {
@@ -67,7 +68,7 @@ render = () => {
             </Drawer>
         </div>
     )
-}
+  }
 }
 
 export default Sidebar;

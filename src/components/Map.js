@@ -73,12 +73,12 @@ class Map extends Component {
     }
 
     // FourSquare info fetched for selected marker
-    let url = `https://api.foursquare.com/v2/venues/search?client_id=${FS_ID}&client_secret=${FS_SECRET}&v=${FS_VERSION}&radius=1000&ll=${props.position.lat},${props.position.lng}`
-    let headers = new Headers();
-    let request = new Request(url, {
-      method: 'GET',
-      headers
-    });
+    let url = `https://api.foursquare.com/v2/venues/search?client_id=${FS_ID}&client_secret=${FS_SECRET}&v=${FS_VERSION}&radius=100&ll=${props.position.lat},${props.position.lng}&llAcc=100`;
+       let headers = new Headers();
+       let request = new Request(url, {
+           method: 'GET',
+           headers
+       });
 
     // Create props for active markers
     let activeMarkerProps;

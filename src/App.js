@@ -9,7 +9,7 @@ class App extends Component {
     lat:  42.327099,
     lon: -83.053262,
     zoom: 13,
-    all: locations,
+    all: breweries,
     mapScriptAvailable: true,
     open: false,
     selectedIndex: null
