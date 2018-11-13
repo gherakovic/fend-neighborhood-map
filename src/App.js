@@ -41,14 +41,14 @@ class App extends Component {
     }
 
     toggleDrawer = () => {
-      // Toggle the value controlling whether the drawer is displayed
+      // Toggle value controlling whether the drawer is displayed
       this.setState({
         open: !this.state.open
       });
     }
 
     updateQuery = (query) => {
-      // Update the query value and filter the list of locations accordingly
+      // Update the query value and filter location lists
       this.setState({
         ...this.state,
         selectedIndex: null,
@@ -62,7 +62,7 @@ class App extends Component {
     }
 
     clickListItem = (index) => {
-      // Set the state to reflect the selected location array index
+      // Set state to reflect selected location array index
       this.setState({ selectedIndex: index, open: !this.state.open })
     }
 
@@ -75,7 +75,7 @@ class App extends Component {
             </button>
             <h1>The Best Breweries in Detroit</h1>
           </div>
-          <MapDisplay
+          <Map
             lat={this.state.lat}
             lon={this.state.lon}
             zoom={this.state.zoom}
@@ -91,5 +91,5 @@ class App extends Component {
         </div>
       );
     }
-
+  }
   export default App;

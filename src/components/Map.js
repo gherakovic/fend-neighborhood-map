@@ -22,6 +22,7 @@ class Map extends Component {
    componentWillReceiveProps = (props) => {
      this.setState({ firstDrop: false });
 
+     // update markers when filtered
      if (this.state.markers.length !== props.locations.length) {
          this.closeInfoWindow();
          this.updateMarkers(props.locations);
@@ -30,22 +31,27 @@ class Map extends Component {
          return;
        }
 
+    // close window if selected item is not open window
     if (!props.selectedIndex || (this.state.activeMarker && (this.state.markets[props.selectedIndex] !== this.state.activeMarker))) {
       this.closeInfoWindow();
      }
 
+     // check for selectedIndex
      if (props.selectedIndex === null || typeof(props.selectedIndex) === "undefined") {
        return;
      };
 
+     // when list item is clicked treat marker as clicked
      this.onMarkerClick(this.state.markerProps[props.selectedIndex], this.state.markers[props.selectedIndex]);
     }
 
+     // available markers are displayed on map
      mapReady = (props, map) => {
         this.setState({ map });
         this.updateMarkers(this.props.locations);
       }
 
+    // closes active marker window and animations
     closeInfoWindow = () => {
       this.state.activeMarker &&
         this.state.activeMarker.setAnimation(null);
@@ -61,6 +67,7 @@ class Map extends Component {
           .filter(item => item.name.includes(props.name) || props.name.includes(item.name))
     }
 
+    // closes any open InfoWindows
     onMarkerClick = (props, marker, e) => {
       this.closeInfoWindow();
     }
@@ -83,7 +90,7 @@ class Map extends Component {
           foursquare: restaurant[0]
         }
 
-        //Get restaurant images and set started
+        // Get restaurant images and set state
         if (activeMarkerProps.foursquare) {
           let url = 'https://api.foursquare.com/v2/venues/${restaurant[0].id}/photos?client_id=${FS_ID}&client_secret=${FS_SECRET}&v=${FS_VERSION}'
           fetch(url)
@@ -111,7 +118,7 @@ class Map extends Component {
    // Prevent error for empty location array
    if (!locations)
      return;
-   // Clear any remaining markers after
+   // Clear remaining markers if any
    this.state.markers.forEach(marker => marker.setMap(null));
 
    let markerProps = [];
