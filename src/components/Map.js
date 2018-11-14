@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import { withGoogleMap, InfoWindow, GoogleMap } from 'react-google-maps';
 import ErrorMaps from './ErrorMaps';
 
 const FS_ID = 'WPNKFPMZT4XHB1GTZJPCP2PTOG1FELFJ55MNPYXBM35V0W00'
@@ -70,7 +70,6 @@ class Map extends Component {
     // closes any open InfoWindows
     onMarkerClick = (props, marker, e) => {
       this.closeInfoWindow();
-    }
 
     // FourSquare info fetched for selected marker
     let url = `https://api.foursquare.com/v2/venues/search?client_id=${FS_ID}&client_secret=${FS_SECRET}&v=${FS_VERSION}&radius=100&ll=${props.position.lat},${props.position.lng}&llAcc=100`;
@@ -155,7 +154,7 @@ class Map extends Component {
    let amProps = this.state.activeMarkerProps;
 
    return (
-     <Map
+     <withGoogleMap
        role="application"
        aria-label="map"
        onReady={this.mapReady}
@@ -180,9 +179,9 @@ class Map extends Component {
            ) : ""}
          </div>
        </InfoWindow>
-     </Map>
+     </withGoogleMap>
    )
  }
 
 };
-export default Map;
+export default withGoogleMap;
