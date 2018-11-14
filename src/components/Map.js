@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withGoogleMap, InfoWindow, GoogleMap } from 'react-google-maps';
+import { withGoogleMap, GoogleMap } from 'react-google-maps';
 import ErrorMaps from './ErrorMaps';
 
 const FS_ID = 'WPNKFPMZT4XHB1GTZJPCP2PTOG1FELFJ55MNPYXBM35V0W00'
@@ -154,7 +154,7 @@ class Map extends Component {
    let amProps = this.state.activeMarkerProps;
 
    return (
-     <withGoogleMap
+     <Map
        role="application"
        aria-label="map"
        onReady={this.mapReady}
@@ -179,7 +179,7 @@ class Map extends Component {
            ) : ""}
          </div>
        </InfoWindow>
-     </withGoogleMap>
+     </Map>
    )
  }
 
