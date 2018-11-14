@@ -1,11 +1,7 @@
-[
-  {
-    "name": "Atwater Brewery",
-    "street": "237 Joseph Campau St",
-    "city": "Detroit",
-    "state": "MI",
-    "zip": "48207",
-    "url": "https://www.atwaterbeer.com//",
-    "pos": {"lat":42.337340297517095,"lng":-83.01844859429431}
-  }
-]
+{
+	"venues": [{
+		"id": "4aa0353df964a520b53e20e3"
+	},{
+		"id": "54f8889d498e4321459eead8"
+}]
+}

@@ -184,4 +184,4 @@ class Map extends Component {
  }
 
 };
-export default withGoogleMap;
+export default Map;
